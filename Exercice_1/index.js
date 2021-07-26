@@ -1,9 +1,7 @@
 import express from 'express';
-import http from 'http';
-import mangoose from 'mongoose';
+import monogoose from 'mongoose';
 import bodyParser from 'body-parser';
-import routes from './src/routes/crmRoutes';
-
+import routes from ' ./src/routes/crmRoutes';
 
 const app = express(); // création de l'objet représentant notre application express
 const port = 3000;
@@ -11,10 +9,10 @@ const port = 3000;
 // connexion mongoose
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/CRMdb', {
-    useMangoClient: true
+    useNewUrlParser: true
 });
 
-// bodyparser : convertir le JSON
+//  installer bodyparser : convertir le JSON
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -25,5 +23,5 @@ app.get('/', function(req, res) { // création de la route sous le verbe get
 })
 
 app.listen(port, () => { // ecoute du serveur sur le port 3000
-    console.log('Le serveur fonctionne sur le port ')
+    console.log('Le serveur fonctionne sur le port ', port)
 })
