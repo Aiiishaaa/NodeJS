@@ -26,6 +26,9 @@ app.use(
         admin: '/'
     })
 );
+app.get('/home', function(req, res) {
+    console.log('Hello world !');
+});
 app.get('/api/unsecured', function(req, res) {
     res.json({ message: 'This is an unsecured endpoint payload' });
 });
