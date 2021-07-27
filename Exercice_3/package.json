@@ -1,5 +1,5 @@
 {
-    "name": "Exercice_3",
+    "name": "node-api-et-keycloak",
     "version": "1.0.0",
     "description": "api-node-js-et-la-securiser-avec-keycloak",
     "main": "index.js",
